@@ -13,22 +13,36 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
-        <style>
-            .btn btn-link{
-                font-size: 100px;
-            }
-        </style>
+    <style>
+        .btn btn-link {
+            font-size: 100px;
+        }
+    </style>
 </head>
 
 <body>
 
-    <b><h1>Find the coins by Shivani Kandikonda</h1></b>
-    <div><b><h3>Click on the locations to find
-        coins, beware the monster</h3></b></div>
-    <h3><div id="locations">Number of locations checked is zero.</div></h3>
-    <h3><div id="score">Score is zero.</div></h3>
-    <button type="button" class="btn btn-warning"><p onclick="help(lastLocation)">Click for help.</p></button>
-    <h3><b><div id="help">Help report</div></b></h3>
+    <b>
+        <h1>Find the coins by Shivani Kandikonda</h1>
+    </b>
+    <div><b>
+            <h3>Click on the locations to find
+                coins, beware the monster</h3>
+        </b></div>
+    <h3>
+        <div id="locations">Number of locations checked is zero.</div>
+    </h3>
+    <h3>
+        <div id="score">Score is zero.</div>
+    </h3>
+    <button type="button" class="btn btn-warning">
+        <p onclick="help(lastLocation)">Click for help.</p>
+    </button>
+    <h3><b>
+            <div id="help">Help report</div>
+        </b></h3>
+    <button type="button" class="btn btn-primary" onclick="resetGame()"><b>New Game</b></button>
+
     <div class="container">
         <div class="image-row d-flex justify-content-center">
             <div>
@@ -156,18 +170,18 @@
         var score = 0;
         var locations = 0;
         var lastLocation = 0;
-        var fancyCoinLocations = [2, 5, 14, 19, 23, 33];
-        var monsterLocation = 20;
+        var fancyCoinLocations = Math.floor(Math.random() * 35);
+        var monsterLocation = Math.floor(Math.random() * 35);
         var fancycount = 0;
         var gameOver = false;
 
-        function check(position){
+        function check(position) {
             if (!gameOver) {
-                if (fancyCoinLocations.indexOf(position)!==-1) {
+                if (fancyCoinLocations.indexOf(position) !== -1) {
                     document.getElementById(ids[position]).setAttribute("src", "fancier coin.jpg");
                     score += 3;
                     locations += 1;
-                    fancycount+=1;
+                    fancycount += 1;
                     document.getElementById("locations").innerHTML = "Number of locations checked is " + score + ".";
 
                 }
@@ -184,35 +198,41 @@
                     document.getElementById("locations").innerHTML = "Number of locations checked is " + score + ".";
                 }
                 locations += 1;
-                lastLocation =   parseInt(position);
+                lastLocation = parseInt(position);
                 console.log(lastLocation);
             }
         }
-
-
         function help(lastLocation) {
             //console.log(lastLocation);
-           
+
             var kinshipLocations = [
                 (lastLocation + 1), (lastLocation - 1), (lastLocation + 5), (lastLocation - 5)
             ];
             //console.log(kinshipLocations);
-            document.getElementById("help").innerHTML ="All Clear";
-             for (let location of kinshipLocations) {
+            document.getElementById("help").innerHTML = "All Clear";
+            for (let location of kinshipLocations) {
                 //console.log(locations);
                 //console.log(fancyCoinLocations.includes(location));
-                if (fancyCoinLocations.indexOf(location)!==-1) {
-                    document.getElementById("help").innerHTML ="So Close";;
+                if (fancyCoinLocations.indexOf(location) !== -1) {
+                    document.getElementById("help").innerHTML = "So Close";;
                 }
-            else if (location == monsterLocation) {
-                document.getElementById("help").innerHTML ="Grr";
-            } 
-            
-        }
-        }
-        
-        
+                else if (location == monsterLocation) {
+                    document.getElementById("help").innerHTML = "Grr";
+                }
 
+            }
+        }
+        function resetGame() {
+            monsterLocation = Math.floor(Math.random() * 35);
+            fancyCoinLocations = Math.floor(Math.random() * 35);
+            locations = 0;
+            score = 0;
+            document.getElementById("locations").innerHTML = "Number of locations checked is zero";
+            document.getElementById("score").innerHTML = "Score is zero";
+            for (let i = 0; i < 35; i++) {
+                document.getElementById(ids[i]).src = "building.jpg";
+            }
+        }
     </script>
 
 </body>
