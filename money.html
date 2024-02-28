@@ -13,139 +13,209 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
+        <style>
+            .btn btn-link{
+                font-size: 100px;
+            }
+        </style>
 </head>
 
 <body>
 
-    <h1>Find the coins by Shivani Kandikonda</h1>
-    <div>Click on the locations to find
-        coins, beware the monster</div>
-    <div id="locations">Number of locations checked is zero.</div>
-    <div id="score">Score is zero.</div>
-    <p>Click for help.</p>
-    <div id="help">Help report</div>
+    <b><h1>Find the coins by Shivani Kandikonda</h1></b>
+    <div><b><h3>Click on the locations to find
+        coins, beware the monster</h3></b></div>
+    <h3><div id="locations">Number of locations checked is zero.</div></h3>
+    <h3><div id="score">Score is zero.</div></h3>
+    <button type="button" class="btn btn-warning"><p onclick="help(lastLocation)">Click for help.</p></button>
+    <h3><b><div id="help">Help report</div></b></h3>
     <div class="container">
         <div class="image-row d-flex justify-content-center">
             <div>
-                <img src="building.jpg" alt="building" height="150" width="150">
+                <img id="1" onclick="check(0)" src="building.jpg" alt="building" height="150" width="150">
             </div>
             <div>
-                <img src="building.jpg" alt="building" height="150" width="150">
+                <img id="2" onclick="check(1)" src="building.jpg" alt="building" height="150" width="150">
             </div>
             <div>
-                <img src="building.jpg" alt="building" height="150" width="150">
+                <img id="3" onclick="check(2)" src="building.jpg" alt="building" height="150" width="150">
             </div>
             <div>
-                <img src="building.jpg" alt="building" height="150" width="150">
+                <img id="4" onclick="check(3)" src="building.jpg" alt="building" height="150" width="150">
             </div>
             <div>
-                <img src="building.jpg" alt="building" height="150" width="150">
-            </div>
-        </div>
-        <div class="image-row d-flex justify-content-center">
-            <div>
-                <img src="building.jpg" alt="building" height="150" width="150">
-            </div>
-            <div>
-                <img src="building.jpg" alt="building" height="150" width="150">
-            </div>
-            <div>
-                <img src="building.jpg" alt="building" height="150" width="150">
-            </div>
-            <div>
-                <img src="building.jpg" alt="building" height="150" width="150">
-            </div>
-            <div>
-                <img src="building.jpg" alt="building" height="150" width="150">
+                <img id="5" onclick="check(4)" src="building.jpg" alt="building" height="150" width="150">
             </div>
         </div>
         <div class="image-row d-flex justify-content-center">
             <div>
-                <img src="building.jpg" alt="building" height="150" width="150">
+                <img id="6" onclick="check(5)" src="building.jpg" alt="building" height="150" width="150">
             </div>
             <div>
-                <img src="building.jpg" alt="building" height="150" width="150">
+                <img id="7" onclick="check(6)" src="building.jpg" alt="building" height="150" width="150">
             </div>
             <div>
-                <img src="building.jpg" alt="building" height="150" width="150">
+                <img id="8" onclick="check(7)" src="building.jpg" alt="building" height="150" width="150">
             </div>
             <div>
-                <img src="building.jpg" alt="building" height="150" width="150">
+                <img id="9" onclick="check(8)" src="building.jpg" alt="building" height="150" width="150">
             </div>
             <div>
-                <img src="building.jpg" alt="building" height="150" width="150">
-            </div>
-        </div>
-        <div class="image-row d-flex justify-content-center">
-            <div>
-                <img src="building.jpg" alt="building" height="150" width="150">
-            </div>
-            <div>
-                <img src="building.jpg" alt="building" height="150" width="150">
-            </div>
-            <div>
-                <img src="building.jpg" alt="building" height="150" width="150">
-            </div>
-            <div>
-                <img src="building.jpg" alt="building" height="150" width="150">
-            </div>
-            <div>
-                <img src="building.jpg" alt="building" height="150" width="150">
+                <img id="10" onclick="check(9)" src="building.jpg" alt="building" height="150" width="150">
             </div>
         </div>
         <div class="image-row d-flex justify-content-center">
             <div>
-                <img src="building.jpg" alt="building" height="150" width="150">
+                <img id="11" onclick="check(10)" src="building.jpg" alt="building" height="150" width="150">
             </div>
             <div>
-                <img src="building.jpg" alt="building" height="150" width="150">
+                <img id="12" onclick="check(11)" src="building.jpg" alt="building" height="150" width="150">
             </div>
             <div>
-                <img src="building.jpg" alt="building" height="150" width="150">
+                <img id="13" onclick="check(12)" src="building.jpg" alt="building" height="150" width="150">
             </div>
             <div>
-                <img src="building.jpg" alt="building" height="150" width="150">
+                <img id="14" onclick="check(13)" src="building.jpg" alt="building" height="150" width="150">
             </div>
             <div>
-                <img src="building.jpg" alt="building" height="150" width="150">
-            </div>
-        </div>
-        <div class="image-row d-flex justify-content-center">
-            <div>
-                <img src="building.jpg" alt="building" height="150" width="150">
-            </div>
-            <div>
-                <img src="building.jpg" alt="building" height="150" width="150">
-            </div>
-            <div>
-                <img src="building.jpg" alt="building" height="150" width="150">
-            </div>
-            <div>
-                <img src="building.jpg" alt="building" height="150" width="150">
-            </div>
-            <div>
-                <img src="building.jpg" alt="building" height="150" width="150">
+                <img id="15" onclick="check(14)" src="building.jpg" alt="building" height="150" width="150">
             </div>
         </div>
         <div class="image-row d-flex justify-content-center">
             <div>
-                <img src="building.jpg" alt="building" height="150" width="150">
+                <img id="16" onclick="check(15)" src="building.jpg" alt="building" height="150" width="150">
             </div>
             <div>
-                <img src="building.jpg" alt="building" height="150" width="150">
+                <img id="17" onclick="check(16)" src="building.jpg" alt="building" height="150" width="150">
             </div>
             <div>
-                <img src="building.jpg" alt="building" height="150" width="150">
+                <img id="18" onclick="check(17)" src="building.jpg" alt="building" height="150" width="150">
             </div>
             <div>
-                <img src="building.jpg" alt="building" height="150" width="150">
+                <img id="19" onclick="check(18)" src="building.jpg" alt="building" height="150" width="150">
             </div>
             <div>
-                <img src="building.jpg" alt="building" height="150" width="150">
+                <img id="20" onclick="check(19)" src="building.jpg" alt="building" height="150" width="150">
+            </div>
+        </div>
+        <div class="image-row d-flex justify-content-center">
+            <div>
+                <img id="21" onclick="check(20)" src="building.jpg" alt="building" height="150" width="150">
+            </div>
+            <div>
+                <img id="22" onclick="check(21)" src="building.jpg" alt="building" height="150" width="150">
+            </div>
+            <div>
+                <img id="23" onclick="check(22)" src="building.jpg" alt="building" height="150" width="150">
+            </div>
+            <div>
+                <img id="24" onclick="check(23)" src="building.jpg" alt="building" height="150" width="150">
+            </div>
+            <div>
+                <img id="25" onclick="check(24)" src="building.jpg" alt="building" height="150" width="150">
+            </div>
+        </div>
+        <div class="image-row d-flex justify-content-center">
+            <div>
+                <img id="26" onclick="check(25)" src="building.jpg" alt="building" height="150" width="150">
+            </div>
+            <div>
+                <img id="27" onclick="check(26)" src="building.jpg" alt="building" height="150" width="150">
+            </div>
+            <div>
+                <img id="28" onclick="check(27)" src="building.jpg" alt="building" height="150" width="150">
+            </div>
+            <div>
+                <img id="29" onclick="check(28)" src="building.jpg" alt="building" height="150" width="150">
+            </div>
+            <div>
+                <img id="30" onclick="check(29)" src="building.jpg" alt="building" height="150" width="150">
+            </div>
+        </div>
+        <div class="image-row d-flex justify-content-center">
+            <div>
+                <img id="31" onclick="check(30)" src="building.jpg" alt="building" height="150" width="150">
+            </div>
+            <div>
+                <img id="32" onclick="check(31)" src="building.jpg" alt="building" height="150" width="150">
+            </div>
+            <div>
+                <img id="33" onclick="check(32)" src="building.jpg" alt="building" height="150" width="150">
+            </div>
+            <div>
+                <img id="34" onclick="check(33)" src="building.jpg" alt="building" height="150" width="150">
+            </div>
+            <div>
+                <img id="35" onclick="check(34)" src="building.jpg" alt="building" height="150" width="150">
             </div>
         </div>
     </div>
-    
+    <script>
+        var ids = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17",
+            "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35"];
+        var score = 0;
+        var locations = 0;
+        var lastLocation = 0;
+        var fancyCoinLocations = [2, 5, 14, 19, 23, 33];
+        var monsterLocation = 20;
+        var fancycount = 0;
+        var gameOver = false;
+
+        function check(position){
+            if (!gameOver) {
+                if (fancyCoinLocations.indexOf(position)!==-1) {
+                    document.getElementById(ids[position]).setAttribute("src", "fancier coin.jpg");
+                    score += 3;
+                    locations += 1;
+                    fancycount+=1;
+                    document.getElementById("locations").innerHTML = "Number of locations checked is " + score + ".";
+
+                }
+                else if (position == monsterLocation) {
+                    document.getElementById(ids[position]).setAttribute("src", "monster.jpg");
+                    gameOver = true;
+                    score -= 5;
+
+                }
+                else {
+                    document.getElementById(ids[position]).setAttribute("src", "coin.jpg");
+                    score += 1;
+                    locations += 1;
+                    document.getElementById("locations").innerHTML = "Number of locations checked is " + score + ".";
+                }
+                locations += 1;
+                lastLocation =   parseInt(position);
+                console.log(lastLocation);
+            }
+        }
+
+
+        function help(lastLocation) {
+            //console.log(lastLocation);
+           
+            var kinshipLocations = [
+                (lastLocation + 1), (lastLocation - 1), (lastLocation + 5), (lastLocation - 5)
+            ];
+            //console.log(kinshipLocations);
+            document.getElementById("help").innerHTML ="All Clear";
+             for (let location of kinshipLocations) {
+                //console.log(locations);
+                //console.log(fancyCoinLocations.includes(location));
+                if (fancyCoinLocations.indexOf(location)!==-1) {
+                    document.getElementById("help").innerHTML ="So Close";;
+                }
+            else if (location == monsterLocation) {
+                document.getElementById("help").innerHTML ="Grr";
+            } 
+            
+        }
+        }
+        
+        
+
+    </script>
+
 </body>
+
 
 </html>
