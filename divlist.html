@@ -51,8 +51,9 @@
         <div id="divlist">row item 3</div>
     </div>
     <br>
-    <button class="button" onclick="makeNewDiv()">Add end</button>
-
+    <button class="button" onclick="makeNewDiv()"><b>Add end</b></button>
+    <button type="button" class="button" onclick="addFront()"><b>Add front</b></button>
+	<button type="button" class="button" onclick="remove()"><b>Remove</b></button>
 </body>
 <script>
     function makeNewDiv() {
@@ -64,9 +65,25 @@
         element.className = "divlist";
         let container = document.getElementById('target');
         container.appendChild(element); 
-
-        
-
+    }
+    function addFront(){
+        let element = document.createElement("div");
+        let value = document.getElementById("inputElement").value;
+        element.style.color = "green";
+        element.innerHTML = value;
+        element.className = "divlist";
+        let container = document.getElementById('target');
+        container.insertBefore(element, container.firstChild);
+    }
+    function remove(){
+        let divlistItems = document.getElementsByClassName("divlist");
+		if (divlistItems.length > 0) {
+			let length = divlistItems.length;
+			let index = Math.floor(length / 2);
+			if (index >= 0 && index < length) {
+				divlistItems[index].remove();
+			}
+		}
     }
 </script>
 
