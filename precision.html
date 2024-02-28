@@ -26,6 +26,26 @@
             stopTime = Date.now();
             console.log(stopTime);
         }
+        function startTime() {
+            for (let i = 0; i < 5; i++) {
+                setTimeout(function () {
+                    document.getElementById('countdown').innerHTML = i;
+                }, (4 - i) * 1000);
+            }
+
+            setTimeout(function () {
+                if (stopTime === undefined) {
+                    document.getElementById('target').innerHTML = "Too Slow";
+                } else {
+                    let elapsedTime = Date.now() - stopTime;
+                    document.getElementById('target').innerHTML = "Time was " + elapsedTime + "milliseconds";
+                }
+            }, 4000);
+        }
+
+        document.addEventListener('click', function () {
+            stopTime = Date.now();
+        });
     </script>
 
 </body>
